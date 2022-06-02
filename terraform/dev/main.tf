@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 #creating an ECR repository
-resource "aws_ecr_repository" "clo835-proj-repo" {
+resource "aws_ecr_repository" "catsdogs-repo" {
   name = "catsdogs-repo"
   #image_tag_mutability = "MUTABLE"
 
