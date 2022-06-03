@@ -1,14 +1,19 @@
 # Local .terraform directories
 **/.terraform/*
-
+*.terraform.lock.hcl
 # .tfstate files
 *.tfstate
 *.tfstate.*
 
+#git files
+*.git
+*.github
+
+#key-pair
+*.pub
 
 # .terraform.lock.hcl file
 .terraform.lock.hcl
-
 # Crash log files
 crash.log
 
