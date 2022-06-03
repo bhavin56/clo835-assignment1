@@ -7,6 +7,7 @@
 
 #git files
 *.git
+*.github
 
 #key-pair
 *.pub
