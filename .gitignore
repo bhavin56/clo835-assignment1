@@ -5,8 +5,7 @@
 *.tfstate
 *.tfstate.*
 
-.git
-.github
+
 # .terraform.lock.hcl file
 .terraform.lock.hcl
 
