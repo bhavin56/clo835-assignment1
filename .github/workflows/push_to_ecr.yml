@@ -51,7 +51,7 @@ jobs:
           # unit test
           docker run -d -p 8080:80 --name cats_app $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker ps
-          echo "Pause for 10 seconds to let container start"
-          sleep 10
+          echo "Pause for 5 seconds to let container start"
+          sleep 5
           curl localhost:8080 -vvv
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
