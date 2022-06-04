@@ -11,6 +11,12 @@
 
 #key-pair
 *.pub
+id_rsa.pub
+id_rsa
+id_dsa.pub
+id_dsa
+*.pem
+*.key
 
 # .terraform.lock.hcl file
 .terraform.lock.hcl
@@ -37,3 +43,5 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+
+.sh
