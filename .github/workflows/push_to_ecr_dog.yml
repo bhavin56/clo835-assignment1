@@ -42,7 +42,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: catsdogs-repo
-          IMAGE_TAG: dog-v0.2
+          IMAGE_TAG: dog-v0.1
         run: |
           cd dogs/
           ls -ltra
@@ -51,7 +51,7 @@ jobs:
           # run a conatiner 
           docker run -d -p 8081:80 --name dogs_app $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker ps
-          echo "Pause for 10 seconds to let container start"
-          sleep 10
+          echo "Pause for 5 seconds to let container start"
+          sleep 5
           curl localhost:8081 -vvv
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
