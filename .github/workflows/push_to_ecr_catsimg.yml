@@ -41,8 +41,8 @@ jobs:
       - name: build, test. tag, and push image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: catsdogs-repo
-          IMAGE_TAG: cat-v0.2
+          ECR_REPOSITORY: cats-repo
+          IMAGE_TAG: cat-v0.1
         run: |
           cd cats/
           ls -ltra
@@ -54,7 +54,14 @@ jobs:
           echo "Pause for 5 seconds to let container start"
           sleep 5
           curl localhost:8080 -vvv
-          cd ../dogs/
+          
+      - name: build, test. tag, and push dogs image to Amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: dogs-repo
+          IMAGE_TAG: dog-v0.1
+        run: |
+          cd dogs/
           ls -ltra
           # docker build
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
