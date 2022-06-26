@@ -54,6 +54,7 @@ jobs:
           echo "Pause for 5 seconds to let container start"
           sleep 5
           curl localhost:8080 -vvv
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
       - name: build, test. tag, and push dogs image to Amazon ECR
         env:
